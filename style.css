@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Barra superior */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.topbar .logo {
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+}
+
+.topbar nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.topbar nav a:hover {
+    text-decoration: underline;
+}
+
+.right-menu {
+    display: flex;
+    align-items: center;
+}
+
+.right-menu a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.league-pass {
+    background-color: #ffcc00;
+    border: none;
+    padding: 6px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Layout principal */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+/* Banner */
+.main-banner {
+    position: relative;
+    flex: 3;
+    display: flex;
+    background-color: #111;
+}
+
+.banner-text {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    max-width: 40%;
+    background: linear-gradient(to right, rgba(0,0,0,0.8), transparent);
+    padding: 20px;
+}
+
+.banner-text h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.banner-text p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.read-btn {
+    background-color: #000;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 6px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.related strong {
+    font-size: 12px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.related ul {
+    list-style: none;
+}
+
+.related li {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.banner-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 1;
+    background-color: #111;
+    padding: 15px;
+}
+
+.sidebar h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    font-size: 13px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
