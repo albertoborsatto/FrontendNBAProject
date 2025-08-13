@@ -57,19 +57,6 @@ body {
     justify-content: space-between;
 }
 
-.future-games {
-    justify-content: space-between;
-    border: 1px solid blue;
-    display: flex;
-    align-items: space-around;
-}
-
-.future-games .fg-info-teams {
-    display: flex;
-    text-align: center;
-    gap: 0.5rem;
-}
-
 .older-matches {
 }
 
@@ -78,6 +65,8 @@ body {
     border-radius: 5px;
     background-color: #dadada;
     padding: 2rem;
+    margin-bottom: 2rem;
+    color: var(--cor-primaria);
 }
 
 .upcoming-game h2{
@@ -87,18 +76,50 @@ body {
 .ug-info    {
     padding: 2rem;
     border-radius: 5px;
-    background-color: #e5e5e5
+    background-color: #e5e5e5;
+    color: #000
 }
 
-.ug-info h3 {
+.ug-info h2 {
     padding: 1rem;
+    margin: 0;
 }
 
 .ug-info-teams {
-    padding: 2rem;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
+    color: #000;
+    font-size: 3rem;
+}
+
+.ug-info-teams article{
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+}
+
+.ug-info-teams img {
+    width: 4rem;
+}
+
+.future-games {
+    display: flex;
+    padding: 2rem;
+    justify-content: space-evenly;
+    align-items: space-around;
+    text-align: center;
+    background-color: #c1c1c1;
+    border-radius: 10px;
+}
+
+.future-games .fg-info-teams {
+    display: flex;
+    text-align: center;
+    gap: 0.5rem;
 }
 
 @media (max-width: 576px) {
