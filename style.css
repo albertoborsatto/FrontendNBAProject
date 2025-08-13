@@ -1,3 +1,12 @@
+:root {
+  --cor-primaria: #1d428a;
+  --cor-secundaria: #c8102e;
+  --cor-texto: #ffffff;
+  --cor-fundo: #111111;
+  --tamanho-fonte-titulo: 2.5rem;
+  --espacamento-padrao: 1rem;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +15,7 @@
 }
 
 body {
-    background-color: #000;
+    background-color:var(--cor-fundo);
     color: #fff;
 }
 
