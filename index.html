@@ -6,6 +6,9 @@
     <title>NBA Replica</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="https://www.edigitalagency.com.au/wp-content/uploads/new-NBA-logo-horizontal-png-medium-size.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="topbar">
@@ -20,10 +23,69 @@
         </nav>
     </header>
 
-    <main class="container">
-        <aside>
+    <main class="container main-container">
+        <div class="left-container">
+        <section>
+            <div class="upcoming-game">
+                <h2>Upcoming Game</h2>
+                <div class="ug-info">
+                    <h3>Date & Time</h3>
+                    <div class="ug-info-teams">
+                        <article>
+                            <p>Time 1</p>
+                        </article>
+                        <p>VS</p>
+                        <article>
+                            <p>Time 2</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="future-games">
+                <div class="fg-card">
+                    <h4>Date & Time</h4>
+                    <div class="fg-info-teams">
+                        <article>
+                            <p>Time 1</p>
+                        </article>
+                        <p>VS</p>
+                        <article>
+                            <p>Time 2</p>
+                        </article>
+                    </div>
+                </div>
+                <div class="fg-card">
+                    <h4>Date & Time</h4>
+                    <div class="fg-info-teams">
+                        <article>
+                            <p>Time 1</p>
+                        </article>
+                        <p>VS</p>
+                        <article>
+                            <p>Time 2</p>
+                        </article>
+                    </div>
+                </div>
+                <div class="fg-card">
+                    <h4>Date & Time</h4>
+                    <div class="fg-info-teams">
+                        <article>
+                            <p>Time 1</p>
+                        </article>
+                        <p>VS</p>
+                        <article>
+                            <p>Time 2</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+        <aside class="older-matches">
             <h2>Older Matches</h2>
-            <div class="older-matches">
+            <div>
                 <div class="om-games">
                     <article>
                         <p>Time 1</p>
@@ -52,63 +114,6 @@
                 </div>
             </div>
         </aside>
-        <section>
-            <div class="upcoming-game">
-                <h2>Upcoming Game</h2>
-                <div class="ug-info">
-                    <h3>Date & Time</h3>
-                    <div class="ug-info-teams">
-                        <article>
-                            <p>Time 1</p>
-                        </article>
-                        <p>VS</p>
-                        <article>
-                            <p>Time 2</p>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="future-games">
-                <div class="fg-card">
-                    <h4>Date & Time</h4>
-                    <div class="ug-info-teams">
-                        <article>
-                            <p>Time 1</p>
-                        </article>
-                        <p>VS</p>
-                        <article>
-                            <p>Time 2</p>
-                        </article>
-                    </div>
-                </div>
-                <div class="fg-card">
-                    <h4>Date & Time</h4>
-                    <div class="ug-info-teams">
-                        <article>
-                            <p>Time 1</p>
-                        </article>
-                        <p>VS</p>
-                        <article>
-                            <p>Time 2</p>
-                        </article>
-                    </div>
-                </div>
-                <div class="fg-card">
-                    <h4>Date & Time</h4>
-                    <div class="ug-info-teams">
-                        <article>
-                            <p>Time 1</p>
-                        </article>
-                        <p>VS</p>
-                        <article>
-                            <p>Time 2</p>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
     
     <script src="./dist/Home/home.js"></script>
