@@ -55,9 +55,12 @@ body {
     max-width: 1200px;
     gap: 20px;
     justify-content: space-between;
+    position: relative;
 }
 
 .older-matches {
+    position: absolute;
+    right: 0;
 }
 
 .upcoming-game {
@@ -120,6 +123,22 @@ body {
     display: flex;
     text-align: center;
     gap: 0.5rem;
+}
+
+.article-container {
+    display: flex;
+}
+
+li {
+    list-style: none;
+}
+
+.winner {
+    color: green;
+}
+
+.loser {
+    color: red;
 }
 
 @media (max-width: 576px) {

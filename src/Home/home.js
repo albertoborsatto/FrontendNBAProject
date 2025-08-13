@@ -1,5 +1,31 @@
 const urlBase = "https://api.balldontlie.io/v1/";
 
+function getWinner(homeTeamScore, visitorTeamScore, homeTeam, visitorTeam) {
+    if (homeTeamScore > visitorTeamScore) {
+        return `${homeTeam} <span class="winner">${homeTeamScore}</span> x <span class="loser">${visitorTeamScore}</span> ${visitorTeam}`;
+    } else {
+        return `${homeTeam} <span class="loser">${homeTeamScore}</span> x <span class="winner">${visitorTeamScore}</span> ${visitorTeam}`;
+    }
+}
+
+function renderGameView(game) {
+    const gamesList = document.querySelector("#games-list");
+    const gameItem = document.createElement("li");
+    const homeTeam = game["home_team"]["full_name"];
+    const visitorTeam = game["visitor_team"]["full_name"];
+    const homeTeamScore = game["home_team_score"];
+    const visitorTeamScore = game["visitor_team_score"];
+
+    gameItem.innerHTML = getWinner(homeTeamScore, visitorTeamScore, homeTeam, visitorTeam);
+    gamesList.appendChild(gameItem);
+}
+
+function populateSideBar(games) {
+    games.forEach((game) => {
+        renderGameView(game);
+    });
+}
+
 async function getAllPlayers() {
     const params = new URLSearchParams({
         "seasons[]": 2024,
@@ -21,8 +47,9 @@ async function getAllPlayers() {
         }
 
         const data = await response.json();
-
-        console.log(data);
+        const games = data["data"];
+        
+        populateSideBar(games);
 
     } catch (error) {
         console.error(error);

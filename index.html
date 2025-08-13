@@ -1,123 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NBA Replica</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="https://www.edigitalagency.com.au/wp-content/uploads/new-NBA-logo-horizontal-png-medium-size.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header class="topbar">
-        <div class="logo">
-            <img src="https://cdn.nba.com/logos/leagues/logo-nba.svg" alt="NBA Logo">
-        </div>
-        <nav>
-            <a href="#">Teams</a>
-            <a href="#">Players</a>
-            <a href="#">Games</a>
-            
-        </nav>
-    </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>NBA Replica</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" href="https://www.edigitalagency.com.au/wp-content/uploads/new-NBA-logo-horizontal-png-medium-size.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Rubik+Mono+One&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="logo">
+                <img src="https://cdn.nba.com/logos/leagues/logo-nba.svg" alt="NBA Logo" />
+            </div>
+            <nav>
+                <a href="#">Teams</a>
+                <a href="#">Players</a>
+                <a href="#">Games</a>
+            </nav>
+        </header>
 
-    <main class="container main-container">
-        <div class="left-container">
-        <section>
-            <div class="upcoming-game">
-                <h2>Upcoming Game</h2>
-                <div class="ug-info">
-                    <h2>13/08 - 18:00</h2>
-                    <div class="ug-info-teams">
-                        <article>
-                            <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/dal.png" alt="Logo do time Dallas Mavericks">
-                            <p>Dallas Mavericks</p>
-                        </article>
-                        <p>VS</p>
-                        <article>
-                            <p>Boston Celtics</p>
-                            <img src="https://upload.wikimedia.org/wikipedia/en/8/8f/Boston_Celtics.svg" alt="Logo do time Boston Celtics">
-                        </article>
+        <main class="container main-container">
+            <div class="left-container">
+                <section>
+                    <div class="upcoming-game">
+                        <h2>Upcoming Game</h2>
+                        <div class="ug-info">
+                            <h2>13/08 - 18:00</h2>
+                            <div class="ug-info-teams">
+                                <article>
+                                    <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/dal.png" alt="Logo do time Dallas Mavericks" />
+                                    <p>Dallas Mavericks</p>
+                                </article>
+                                <p>VS</p>
+                                <article>
+                                    <p>Boston Celtics</p>
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/8/8f/Boston_Celtics.svg" alt="Logo do time Boston Celtics" />
+                                </article>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
+                <section>
+                    <div class="future-games">
+                        <div class="fg-card">
+                            <h4>Date & Time</h4>
+                            <div class="fg-info-teams">
+                                <article>
+                                    <p>Time 1</p>
+                                </article>
+                                <p>VS</p>
+                                <article>
+                                    <p>Time 2</p>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="fg-card">
+                            <h4>Date & Time</h4>
+                            <div class="fg-info-teams">
+                                <article>
+                                    <p>Time 1</p>
+                                </article>
+                                <p>VS</p>
+                                <article>
+                                    <p>Time 2</p>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="fg-card">
+                            <h4>Date & Time</h4>
+                            <div class="fg-info-teams">
+                                <article>
+                                    <p>Time 1</p>
+                                </article>
+                                <p>VS</p>
+                                <article>
+                                    <p>Time 2</p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
-        <section>
-            <div class="future-games">
-                <div class="fg-card">
-                    <h4>Date & Time</h4>
-                    <div class="fg-info-teams">
-                        <article>
-                            <p>Time 1</p>
-                        </article>
-                        <p>VS</p>
-                        <article>
-                            <p>Time 2</p>
-                        </article>
+            <aside class="older-matches">
+                <h2>Older Matches</h2>
+                <div>
+                    <div class="om-games">
+                        <ul id="games-list"></ul>
                     </div>
                 </div>
-                <div class="fg-card">
-                    <h4>Date & Time</h4>
-                    <div class="fg-info-teams">
-                        <article>
-                            <p>Time 1</p>
-                        </article>
-                        <p>VS</p>
-                        <article>
-                            <p>Time 2</p>
-                        </article>
-                    </div>
-                </div>
-                <div class="fg-card">
-                    <h4>Date & Time</h4>
-                    <div class="fg-info-teams">
-                        <article>
-                            <p>Time 1</p>
-                        </article>
-                        <p>VS</p>
-                        <article>
-                            <p>Time 2</p>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-        </div>
-        <aside class="older-matches">
-            <h2>Older Matches</h2>
-            <div>
-                <div class="om-games">
-                    <article>
-                        <p>Time 1</p>
-                        <p>pontos 1</p>
-                        <p>Time 2</p>
-                        <p>pontos 2</p>
-                    </article>
-                    <article>
-                        <p>Time 3</p>
-                        <p>pontos 3</p>
-                        <p>Time 4</p>
-                        <p>pontos 4</p>
-                    </article>
-                    <article>
-                        <p>Time 5</p>
-                        <p>pontos 5</p>
-                        <p>Time 6</p>
-                        <p>pontos 6</p>
-                    </article>
-                    <article>
-                        <p>Time 7</p>
-                        <p>pontos 7</p>
-                        <p>Time 8</p>
-                        <p>pontos 8</p>
-                    </article>
-                </div>
-            </div>
-        </aside>
-    </main>
-    
-    <script src="./src/Home/home.js"></script>
-</body>
+            </aside>
+        </main>
+
+        <script src="./src/Home/home.js"></script>
+    </body>
 </html>
