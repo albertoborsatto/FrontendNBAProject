@@ -1,61 +1,58 @@
-const urlBase = "https://api.balldontlie.io/v1/";
+const urlBase = "https://api.balldontlie.io/v1";
 
-function getWinner(homeTeamScore, visitorTeamScore, homeTeam, visitorTeam) {
-    if (homeTeamScore > visitorTeamScore) {
-        return `${homeTeam} <span class="winner">${homeTeamScore}</span> x <span class="loser">${visitorTeamScore}</span> ${visitorTeam}`;
+function getWinner(homeScore, visitorScore, homeTeam, visitorTeam) {
+    if (homeScore > visitorScore) {
+        return `
+            <div class="game-result">
+                ${homeTeam}
+                <span class="winner">${homeScore}</span>
+                 VS 
+                <span class="loser">${visitorScore}</span>
+                ${visitorTeam}
+            </div>
+        `;
     } else {
-        return `${homeTeam} <span class="loser">${homeTeamScore}</span> x <span class="winner">${visitorTeamScore}</span> ${visitorTeam}`;
+        return `
+            <div class="game-result">
+                ${homeTeam}
+                <span class="loser">${homeScore}</span>
+                 VS 
+                <span class="winner">${visitorScore}</span>
+                ${visitorTeam}
+            </div>
+        `;
     }
 }
 
-function renderGameView(game) {
-    const gamesList = document.querySelector("#games-list");
-    const gameItem = document.createElement("li");
-    const homeTeam = game["home_team"]["full_name"];
-    const visitorTeam = game["visitor_team"]["full_name"];
-    const homeTeamScore = game["home_team_score"];
-    const visitorTeamScore = game["visitor_team_score"];
-
-    gameItem.innerHTML = getWinner(homeTeamScore, visitorTeamScore, homeTeam, visitorTeam);
-    gamesList.appendChild(gameItem);
+function renderGame(game) {
+    const list = document.querySelector(".om-games");
+    const article = document.createElement("article");
+    article.innerHTML = getWinner(
+        game.home_team_score,
+        game.visitor_team_score,
+        game.home_team.full_name,
+        game.visitor_team.full_name
+    );
+    list.appendChild(article);
 }
 
-function populateSideBar(games) {
-    games.forEach((game) => {
-        renderGameView(game);
-    });
-}
-
-async function getAllPlayers() {
+async function getGames() {
     const params = new URLSearchParams({
         "seasons[]": 2024,
-        per_page: 100
+        per_page: 3
     });
 
-    const url = `${urlBase}/games?${params}`;
-
     try {
-        const response = await fetch(url, {
-            method: "GET",
-            headers: {
-                "Authorization": "84e7b864-444b-41b0-86bd-47cdff99dcab"
-            }
+        const res = await fetch(`${urlBase}/games?${params}`, {
+            headers: { "Authorization": "84e7b864-444b-41b0-86bd-47cdff99dcab" }
         });
 
-        if (!response.ok) {
-            throw new Error(`Erro na requisição: ${response.status}`);
-        }
-
-        const data = await response.json();
-        const games = data["data"];
-        
-        populateSideBar(games);
-
-    } catch (error) {
-        console.error(error);
+        if (!res.ok) throw new Error("Erro na API");
+        const data = await res.json();
+        data.data.forEach(renderGame);
+    } catch (err) {
+        console.error(err);
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    getAllPlayers();
-});
+document.addEventListener("DOMContentLoaded", getGames);

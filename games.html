@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NBA - Games</title>
+    <link rel="icon" href="https://www.edigitalagency.com.au/wp-content/uploads/new-NBA-logo-horizontal-png-medium-size.png" />
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="../FrontendNBAProject/src/games.js"></script>
 </head>
 <body>
 <header class="topbar">
-    <img src="logo-nba.png" alt="NBA Logo">
+    <img src="https://cdn.nba.com/logos/leagues/logo-nba.svg" alt="NBA Logo" />
     <nav>
         <a href="index.html">Home</a>
         <a href="games.html" class="active">Games</a>
@@ -20,12 +21,13 @@
 </header>
 
 <main class="container">
-    <section class="left-container">
+    <section class="older-matches">
         <h2>All games - Season 2024</h2>
-        <ul id="games-list" class="game-list"></ul>
+        <div class="games-list">
+        </div>
     </section>
 </main>
 
-<script src="games.js"></script>
+<script src="./src/games.js"></script>
 </body>
 </html>
