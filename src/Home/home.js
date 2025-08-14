@@ -1,22 +1,27 @@
+import { formatDate } from "./utils/dateFormatter.js";
+
 const urlBase = "https://api.balldontlie.io/v1/";
 
 function getWinner(homeTeamScore, visitorTeamScore, homeTeam, visitorTeam) {
     if (homeTeamScore > visitorTeamScore) {
-        return `${homeTeam} <span class="winner">${homeTeamScore}</span> x <span class="loser">${visitorTeamScore}</span> ${visitorTeam}`;
+        return `<h4>${homeTeam} <span class="winner">${homeTeamScore}</span> x <span class="loser">${visitorTeamScore}</span> ${visitorTeam}</h4>`;
     } else {
-        return `${homeTeam} <span class="loser">${homeTeamScore}</span> x <span class="winner">${visitorTeamScore}</span> ${visitorTeam}`;
+        return `<h4>${homeTeam} <span class="loser">${homeTeamScore}</span> x <span class="winner">${visitorTeamScore}</span> ${visitorTeam}</h4>`;
     }
 }
 
 function renderGameView(game) {
     const gamesList = document.querySelector("#games-list");
     const gameItem = document.createElement("li");
+    const gameArticle = document.createElement("article");
     const homeTeam = game["home_team"]["full_name"];
     const visitorTeam = game["visitor_team"]["full_name"];
     const homeTeamScore = game["home_team_score"];
     const visitorTeamScore = game["visitor_team_score"];
+    const gameDate = formatDate(game["date"]);
 
-    gameItem.innerHTML = getWinner(homeTeamScore, visitorTeamScore, homeTeam, visitorTeam);
+    gameArticle.innerHTML = `<h4>Match date: ${gameDate}</h4>` + getWinner(homeTeamScore, visitorTeamScore, homeTeam, visitorTeam);
+    gameItem.appendChild(gameArticle);
     gamesList.appendChild(gameItem);
 }
 
@@ -48,7 +53,7 @@ async function getAllPlayers() {
 
         const data = await response.json();
         const games = data["data"];
-        
+
         populateSideBar(games);
 
     } catch (error) {

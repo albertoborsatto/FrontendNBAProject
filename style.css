@@ -1,21 +1,21 @@
 :root {
-  --cor-primaria: #1d428a;
-  --cor-secundaria: #c8102e;
-  --cor-texto: #ffffff;
-  --cor-fundo: #c1c1c1;
-  --tamanho-fonte-titulo: 2.5rem;
-  --espacamento-padrao: 1rem;
+    --cor-primaria: #1d428a;
+    --cor-secundaria: #c8102e;
+    --cor-texto: #ffffff;
+    --cor-fundo: #c1c1c1;
+    --tamanho-fonte-titulo: 2.5rem;
+    --espacamento-padrao: 1rem;
 }
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
 }
 
 body {
-    background-color:var(--cor-fundo);
+    background-color: var(--cor-fundo);
     color: #fff;
 }
 
@@ -52,7 +52,7 @@ body {
 .container {
     display: flex;
     padding: 2.5rem;
-    max-width: 1200px;
+
     gap: 20px;
     justify-content: space-between;
     position: relative;
@@ -60,7 +60,7 @@ body {
 
 .older-matches {
     position: absolute;
-    right: 0;
+    right: 2.5rem;
 }
 
 .upcoming-game {
@@ -72,11 +72,11 @@ body {
     color: var(--cor-primaria);
 }
 
-.upcoming-game h2{
+.upcoming-game h2 {
     margin-bottom: 2rem;
 }
 
-.ug-info    {
+.ug-info {
     padding: 2rem;
     border-radius: 5px;
     background-color: #e5e5e5;
@@ -97,7 +97,7 @@ body {
     font-size: 3rem;
 }
 
-.ug-info-teams article{
+.ug-info-teams article {
     display: flex;
     padding: 1rem;
     align-items: center;
@@ -142,6 +142,16 @@ body {
 
 li {
     list-style: none;
+}
+
+.older-matches h2 {
+    margin-bottom: 0.75rem;
+}
+
+#games-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .winner {
