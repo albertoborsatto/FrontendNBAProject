@@ -41,7 +41,7 @@ body {
 .left-container {
     display: flex;
     max-width: 1000px;
-    width: 70%;
+    width: 80%;
     border-radius: 10px;
     background-color: #cdcdcd;
     flex-direction: column;
@@ -51,7 +51,7 @@ body {
 
 .container {
     display: flex;
-    padding: 3rem;
+    padding: 2.5rem;
     max-width: 1200px;
     gap: 20px;
     justify-content: space-between;
@@ -68,7 +68,7 @@ body {
     border-radius: 5px;
     background-color: #dadada;
     padding: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: var(--cor-primaria);
 }
 
@@ -80,7 +80,7 @@ body {
     padding: 2rem;
     border-radius: 5px;
     background-color: #e5e5e5;
-    color: #000
+    color: var(--cor-primaria);
 }
 
 .ug-info h2 {
@@ -93,7 +93,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    color: #000;
+    color: var(--cor-primaria);
     font-size: 3rem;
 }
 
@@ -111,18 +111,29 @@ body {
 
 .future-games {
     display: flex;
-    padding: 2rem;
+    padding: 1.5rem;
     justify-content: space-evenly;
     align-items: space-around;
     text-align: center;
-    background-color: #c1c1c1;
-    border-radius: 10px;
+    background-color: #dadada;
+    border-radius: 5px;
 }
 
-.future-games .fg-info-teams {
+.fg-card {
+    padding: 1rem;
+    max-width: min-content;
+    border-radius: 5px;
+    background-color: #e5e5e5;
+    color: var(--cor-secundaria);
+}
+
+.fg-info-teams {
     display: flex;
-    text-align: center;
-    gap: 0.5rem;
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--cor-secundaria);
 }
 
 .article-container {
