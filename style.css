@@ -159,6 +159,10 @@ body {
   gap: 10px;
 }
 
+article .game-result {
+  width: 300px;
+}
+
 .game-result {
   display: flex;
   align-items: center;
