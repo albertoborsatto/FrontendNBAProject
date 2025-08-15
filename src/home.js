@@ -1,8 +1,13 @@
 const urlBase = "https://api.balldontlie.io/v1";
 
-function getWinner(homeScore, visitorScore, homeTeam, visitorTeam) {
+function storeGameId(gameId) {
+    localStorage.setItem("gameId", gameId);
+}
+
+function getWinner(id, homeScore, visitorScore, homeTeam, visitorTeam) {
     if (homeScore > visitorScore) {
         return `
+        <a href="/game.html" class="game-link" id=${id}>
             <div class="game-result">
                 ${homeTeam}
                 <span class="winner">${homeScore}</span>
@@ -10,9 +15,11 @@ function getWinner(homeScore, visitorScore, homeTeam, visitorTeam) {
                 <span class="loser">${visitorScore}</span>
                 ${visitorTeam}
             </div>
+        </a>
         `;
     } else {
         return `
+        <a href="/game.html" class="game-link" id=${id}>
             <div class="game-result">
                 ${homeTeam}
                 <span class="loser">${homeScore}</span>
@@ -20,6 +27,7 @@ function getWinner(homeScore, visitorScore, homeTeam, visitorTeam) {
                 <span class="winner">${visitorScore}</span>
                 ${visitorTeam}
             </div>
+        </a>
         `;
     }
 }
@@ -28,12 +36,14 @@ function renderGame(game) {
     const list = document.querySelector(".om-games");
     const article = document.createElement("article");
     article.innerHTML = getWinner(
+        game.id,
         game.home_team_score,
         game.visitor_team_score,
         game.home_team.full_name,
         game.visitor_team.full_name
     );
     list.appendChild(article);
+    
 }
 
 async function getGames() {
@@ -55,4 +65,12 @@ async function getGames() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", getGames);
+document.addEventListener("DOMContentLoaded", async () => {
+    await getGames();
+    const gameLinks = document.querySelectorAll(".game-link");
+
+    gameLinks.forEach(game => {
+        game.addEventListener("click", () => storeGameId(game.id));
+    });
+
+});
