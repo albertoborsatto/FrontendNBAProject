@@ -51,8 +51,12 @@ async function getGames() {
         "seasons[]": 2024,
         per_page: 3
     });
-
+    
+    const loading = document.querySelector(".loading-container");
+    
     try {
+        loading.style.display = "fixed";
+
         const res = await fetch(`${urlBase}/games?${params}`, {
             headers: { "Authorization": "84e7b864-444b-41b0-86bd-47cdff99dcab" }
         });
@@ -62,6 +66,8 @@ async function getGames() {
         data.data.forEach(renderGame);
     } catch (err) {
         console.error(err);
+    } finally {
+        loading.style.display = "none";
     }
 }
 

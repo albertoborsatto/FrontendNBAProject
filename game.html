@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Rubik+Mono+One&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
     </head>
 <body>
     <header class="topbar">
@@ -20,26 +21,29 @@
                     <a href="teams.html">Teams</a>
             </nav>
     </header>
-
-    <main class="container main-container">
+    <main class="container main-container game-detailed">
         <div class="game-season">
             <h2>Final</h2>
             <div class="game-details">
-                <div class="game-datetime">
-                    <p>Date & Time</p>
+                <div class="game-info-container">
+                    <article class="team-container" id="team1">
+                        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/dal.png" alt="Logo do time Dallas Mavericks" />
+                        <h3></h3>
+                    </article>
+                    <h1 id="team2-score"></h1>
+                    <p><b>VS</b></p>
+                    <h1 id="team1-score"></h1>
+                    <article class="team-container" id="team2">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/8/8f/Boston_Celtics.svg" alt="Logo do time Boston Celtics" />
+                        <h3></h3>
+                    </article>
                 </div>
-                <article>
-                    <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/dal.png" alt="Logo do time Dallas Mavericks" />
-                    <p>Dallas Mavericks</p>
-                </article>
-                <p>VS</p>
-                <article>
-                    <p>Boston Celtics</p>
-                    <img src="https://upload.wikimedia.org/wikipedia/en/8/8f/Boston_Celtics.svg" alt="Logo do time Boston Celtics" />
-                </article>
             </div>
         </div>
     </main>
+    <div class="loading-container">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+    </div>
 
     <script src="./src/game.js"></script>
 </body>

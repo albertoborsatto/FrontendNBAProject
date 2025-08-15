@@ -7,29 +7,32 @@
     <link rel="icon" href="https://www.edigitalagency.com.au/wp-content/uploads/new-NBA-logo-horizontal-png-medium-size.png" />
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="../FrontendNBAProject/src/games.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 </head>
 <body>
-<header class="topbar">
-    <a href="index.html">
-        <img src="https://cdn.nba.com/logos/leagues/logo-nba.svg" alt="NBA Logo"/>
-    </a>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="games.html" class="active">Games</a>
-        <a href="players.html">Players</a>
-        <a href="teams.html">Teams</a>
-    </nav>
-</header>
+    <header class="topbar">
+        <a href="index.html">
+            <img src="https://cdn.nba.com/logos/leagues/logo-nba.svg" alt="NBA Logo"/>
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="games.html" class="active">Games</a>
+            <a href="players.html">Players</a>
+            <a href="teams.html">Teams</a>
+        </nav>
+    </header>
 
-<main class="container">
-    <section class="older-matches">
-        <h2>All games - Season 2024</h2>
-        <div class="games-list">
-        </div>
-    </section>
-</main>
-
-<script src="./src/games.js"></script>
+    <main class="container">
+        <section class="older-matches">
+            <h2>All games - Season 2024</h2>
+            <div class="games-list">
+            </div>
+        </section>
+    </main>
+    
+    <div class="loading-container">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+    </div>
+    <script src="./src/games.js"></script>
 </body>
 </html>

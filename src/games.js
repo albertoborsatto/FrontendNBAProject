@@ -1,25 +1,33 @@
 const urlBase = "https://api.balldontlie.io/v1/";
 
-function getWinner(homeTeamScore, visitorTeamScore, homeTeam, visitorTeam) {
-    if (homeTeamScore > visitorTeamScore) {
+function storeGameId(gameId) {
+    localStorage.setItem("gameId", gameId);
+}
+
+function getWinner(id, homeScore, visitorScore, homeTeam, visitorTeam) {
+    if (homeScore > visitorScore) {
         return `
+        <a href="/game.html" class="game-link" id=${id}>
             <div class="game-result">
                 ${homeTeam}
-                <span class="winner">${homeTeamScore}</span>
+                <span class="winner">${homeScore}</span>
                  VS 
-                <span class="loser">${visitorTeamScore}</span>
+                <span class="loser">${visitorScore}</span>
                 ${visitorTeam}
             </div>
+        </a>
         `;
     } else {
         return `
+        <a href="/game.html" class="game-link" id=${id}>
             <div class="game-result">
                 ${homeTeam}
-                <span class="loser">${homeTeamScore}</span>
+                <span class="loser">${homeScore}</span>
                  VS 
-                <span class="winner">${visitorTeamScore}</span>
+                <span class="winner">${visitorScore}</span>
                 ${visitorTeam}
             </div>
+        </a>
         `;
     }
 }
@@ -31,8 +39,9 @@ function renderGameView(game) {
     const visitorTeam = game["visitor_team"]["full_name"];
     const homeTeamScore = game["home_team_score"];
     const visitorTeamScore = game["visitor_team_score"];
+    const gameId = game["id"]
 
-    gameItem.innerHTML = getWinner(homeTeamScore, visitorTeamScore, homeTeam, visitorTeam);
+    gameItem.innerHTML = getWinner(gameId, homeTeamScore, visitorTeamScore, homeTeam, visitorTeam);
     gamesList.appendChild(gameItem);
 }
 
@@ -50,7 +59,11 @@ async function getAllPlayers() {
 
     const url = `${urlBase}/games?${params}`;
 
+    const loading = document.querySelector(".loading-container");
+
     try {
+        loading.style.display = "fixed";
+
         const response = await fetch(url, {
             method: "GET",
             headers: {
@@ -69,9 +82,16 @@ async function getAllPlayers() {
 
     } catch (error) {
         console.error(error);
+    } finally {
+        loading.style.display = "none";
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    getAllPlayers();
+document.addEventListener("DOMContentLoaded", async () => {
+    await getAllPlayers();
+    const gameLinks = document.querySelectorAll(".game-link");
+
+    gameLinks.forEach(game => {
+        game.addEventListener("click", () => storeGameId(game.id));
+    });
 });
