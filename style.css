@@ -144,6 +144,16 @@ body {
   font-size: 0.95rem;
 }
 
+.older-matches h2 {
+    margin-bottom: 0.75rem;
+}
+
+#games-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
 .winner {
   color: var(--cor-vencedor);
   font-weight: bold;
